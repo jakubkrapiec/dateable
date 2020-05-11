@@ -1,6 +1,6 @@
 
 # 📆 Date
-[![Pub](https://img.shields.io/pub/v/simple_animations.svg)](https://pub.dartlang.org/packages/simple_animations)
+[![Pub](https://img.shields.io/pub/v/dateable.svg)](https://pub.dartlang.org/packages/dateable)
 ![Tests](https://github.com/SugaR256/dateable/workflows/Tests/badge.svg?branch=master)
 
 A Dart package to help you with managing dates easily. Can be used to store, convert, construct, parse and serialise dates. Calendar correctness is guaranteed by the usage of `DateTime` 's system under the hood.
