@@ -1,3 +1,11 @@
+## 1.0.0+4
+
+- Minor correction in CHANGELOG.
+
+## 1.0.0+3
+
+- Minor corrections in README file.
+
 ## 1.0.0+2
 
 - Minor corrections in README file.
