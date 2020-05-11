@@ -14,7 +14,7 @@ import 'package:dateable/dateable.dart';
 Variety of different constructors allows for great flexibility and interoperability with other types.
 ```dart
 final date = Date(31, 12, 2019);
-final date = Date.fromDateTime(DateTime(2019, 12, 31, 19, 12)); // Time of day is truncated
+final date = Date.fromDateTime(DateTime(2019, 12, 31, 19, 1)); // Time of day is truncated
 final date = Date.parseIso8601('2019-12-31T18:23:48.956871'); // Time of day is truncated
 final date = Date.parse('31122019');
 ```
