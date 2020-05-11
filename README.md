@@ -54,7 +54,7 @@ Last but not least, there is a set of useful modifiers. Every `Date` object is i
 date.addDays(2) == date + 2 // Always true
 date.subtractDays(7) == date - 7 // Also always true
 ```
-Sorting an `Iterable` of `Date`s is even easier:
+Sorting an `Iterable` of `Date`s chronologically is even easier:
 ```dart
 [Date(21, 9, 2004), Date(24, 12, 2006), Date(11, 3, 2002)].sort((a, b) => a.compareTo(b));
 ```
