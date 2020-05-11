@@ -1,6 +1,6 @@
 
 # 📆 Date
-A Dart package to help you with managing dates easily. Calendar correctness is guaranteed by the usage of `DateTime` 's system under the hood.
+A Dart package to help you with managing dates easily. A Dart package to help you with managing dates easily. Can be used to store, convert, construct, parse and serialise dates. Calendar correctness is guaranteed by the usage of `DateTime` 's system under the hood.
 ## ⚙️ Import
 In your `.dart` files:
 ```dart
