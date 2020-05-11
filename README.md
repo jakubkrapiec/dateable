@@ -4,7 +4,7 @@ A Dart package to help you with managing dates easily. Calendar correctness is g
 ## ⚙️ Import
 In your `.dart` files:
 ```dart
-import 'package:date/date.dart';
+import 'package:dateable/dateable.dart';
 ```
 ## ⚗️ Usage
 ### 👷 Constructors:
@@ -57,6 +57,6 @@ Sorting an `Iterable` of `Date`s is even easier:
 ```
 Now the list is `Date(11, 3, 2002), [Date(21, 9, 2004), Date(24, 12, 2006)]`.
 ## 🐛 Contributing / bug reporting
-Contributions and bug reports are welcome! Feel free to [open an issue](https://github.com/SugaR256/date/issues) or [create a pull request](https://github.com/SugaR256/date/pulls).
+Contributions and bug reports are welcome! Feel free to [open an issue](https://github.com/SugaR256/dateable/issues) or [create a pull request](https://github.com/SugaR256/dateable/pulls).
 ## 📖 License
-This package is distributed under [MIT license](https://github.com/SugaR256/date/blob/master/LICENSE).
+This package is distributed under [MIT license](https://github.com/SugaR256/dateable/blob/master/LICENSE).

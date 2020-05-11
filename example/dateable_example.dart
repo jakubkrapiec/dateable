@@ -1,4 +1,4 @@
-import 'package:date/date.dart';
+import 'package:dateable/dateable.dart';
 
 void main() {
   // The most basic constructor.
