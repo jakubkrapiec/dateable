@@ -21,32 +21,31 @@ void main() {
     print('Very useful.');
   }
 
-
   // Do subtractDays and operator- have the same meaning?
-  if(Date(1, 1, 2020) - 2 == Date(1, 1, 2020).subtractDays(2)) {
+  if (Date(1, 1, 2020) - 2 == Date(1, 1, 2020).subtractDays(2)) {
     print('Yes, they do!');
   }
   // The same with addDays and operator+.
-  if(Date(31, 12, 2021) + 18 == Date(1, 1, 2022).addDays(17)) {
+  if (Date(31, 12, 2021) + 18 == Date(1, 1, 2022).addDays(17)) {
     print(':)');
   }
   // You can also use operators >, <, >=, <= and ==...
-  if(Date(21, 3, 2002) < Date(21, 9, 2004)) {
+  if (Date(21, 3, 2002) < Date(21, 9, 2004)) {
     print('Spoiler: it is true.');
   }
   // ...as well as isAfter() and isBefore()!
-  if(Date(21, 3, 2002).isBefore(Date(21, 9, 2004))) {
+  if (Date(21, 3, 2002).isBefore(Date(21, 9, 2004))) {
     print('This is also true.');
   }
 
   // There are also some nice conversions:
-  if(Date(21, 3, 2002).toDateTime() == DateTime(2002, 3, 21)) {
+  if (Date(21, 3, 2002).toDateTime() == DateTime(2002, 3, 21)) {
     print('Nice.');
   }
-  if(Date(21, 3,2002).toIso8601() == '2002-03-21T00:00:00.000') {
+  if (Date(21, 3, 2002).toIso8601() == '2002-03-21T00:00:00.000') {
     print('Nice!');
   }
-  if(Date(21, 3, 2002).toString() == '21032002') {
+  if (Date(21, 3, 2002).toString() == '21032002') {
     print('<3');
   }
 

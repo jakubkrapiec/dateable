@@ -70,44 +70,44 @@ void main() {
     test('operator<= negative test.', () {
       expect(Date(21, 9, 2004) <= Date(11, 3, 2002), equals(false));
     });
-    test('isBefore(Date) positive test.', (){
+    test('isBefore(Date) positive test.', () {
       expect(Date(11, 3, 2002).isBefore(Date(21, 9, 2004)), equals(true));
     });
-    test('isBefore(Date) negative test,', (){
+    test('isBefore(Date) negative test,', () {
       expect(Date(11, 3, 2002).isBefore(Date(11, 3, 2002)), equals(false));
     });
-    test('isAfter(Date) positive test.', (){
+    test('isAfter(Date) positive test.', () {
       expect(Date(21, 9, 2004).isAfter(Date(11, 3, 2002)), equals(true));
     });
-    test('isAfter(Date) negative test.', (){
+    test('isAfter(Date) negative test.', () {
       expect(Date(11, 3, 2002).isAfter(Date(11, 3, 2002)), equals(false));
     });
   });
-  group('Conversion tests.', (){
-    test('toDateTime() test.', (){
+  group('Conversion tests.', () {
+    test('toDateTime() test.', () {
       expect(Date(11, 3, 2002).toDateTime(), equals(DateTime(2002, 3, 11)));
     });
     test('toIso8601() test.', () {
       expect(Date(11, 3, 2002).toIso8601(), equals('2002-03-11T00:00:00.000'));
     });
-    test('toString() test.', (){
+    test('toString() test.', () {
       expect(Date(11, 3, 2002).toString(), equals('11032002'));
     });
-    test('toDate() DateTime extension test.', (){
+    test('toDate() DateTime extension test.', () {
       expect(DateTime(2002, 3, 11).toDate(), equals(Date(11, 3, 2002)));
     });
   });
-  group('Addition and subtraction tests.',(){
-    test('operator+ test.', (){
+  group('Addition and subtraction tests.', () {
+    test('operator+ test.', () {
       expect(Date(29, 02, 2020) + 1, equals(Date(1, 3, 2020)));
     });
     test('operator- test.', () {
       expect(Date(1, 1, 2020) - 1, equals(Date(31, 12, 2019)));
     });
-    test('addDays(int) test.', (){
+    test('addDays(int) test.', () {
       expect(Date(29, 02, 2020).addDays(3), equals(Date(3, 3, 2020)));
     });
-    test('subtractDays(int) test.', (){
+    test('subtractDays(int) test.', () {
       expect(Date(7, 6, 2020).subtractDays(7), equals(Date(31, 5, 2020)));
     });
   });
