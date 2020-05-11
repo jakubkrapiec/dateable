@@ -58,7 +58,7 @@ Sorting an `Iterable` of `Date`s is even easier:
 ```dart
 [Date(21, 9, 2004), Date(24, 12, 2006), Date(11, 3, 2002)].sort((a, b) => a.compareTo(b));
 ```
-Now the list is `Date(11, 3, 2002), [Date(21, 9, 2004), Date(24, 12, 2006)]`.
+Now the list is `[Date(11, 3, 2002), Date(21, 9, 2004), Date(24, 12, 2006)]`.
 ## 🐛 Contributing / bug reporting
 Contributions and bug reports are welcome! Feel free to [open an issue](https://github.com/SugaR256/dateable/issues) or [create a pull request](https://github.com/SugaR256/dateable/pulls).
 ## 📖 License
