@@ -1,0 +1,21 @@
+name: Pana rating
+on: [push, pull_request]
+
+jobs:
+  package-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: axel-op/dart-package-analyzer/with-full-sdk@stable
+        id: pana_run
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check scores
+        run: |
+          MAINTENANCE_SCORE=${{ steps.pana_run.outputs.maintenance }}
+          HEALTH_SCORE=${{ steps.pana_run.outputs.health }}
+          if (( $(echo "$MAINTENANCE_SCORE < 100" | bc) )) || (( $(echo "$HEALTH_SCORE < 100" | bc) ))
+          then
+            echo "Pana scores are not both equal to 100"
+            exit 1
+          fi
