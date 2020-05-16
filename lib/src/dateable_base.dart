@@ -117,6 +117,11 @@ class Date implements Comparable<Date> {
     return this > other;
   }
 
+  /// Checks if [this] is the same date as [other].
+  bool isTheSameDate(Date other) {
+    return _date.isTheSameDate(other);
+  }
+
   /// Returns day of the date represented by this object. Always in range [1; 31].
   int get day => _date.day;
 
@@ -144,6 +149,11 @@ class Date implements Comparable<Date> {
     }
     return '$day$month$year';
   }
+
+  /// Returns new [Date] modified with given input.
+  Date copyWith({int day, int month, int year}) {
+    return Date(day ?? _date.day, month ?? _date.month, year ?? _date.year);
+  }
 }
 
 /// A set of extensions to work with [DateTime]s more seamlessly.
@@ -151,5 +161,10 @@ extension DateExtensions on DateTime {
   /// Converts [this] to a corresponding [Date] object.
   Date toDate() {
     return Date.fromDateTime(this);
+  }
+
+  /// Checks is [this] is on the same date as the [Date] in an argument.
+  bool isTheSameDate(Date date) {
+    return toDate() == date;
   }
 }

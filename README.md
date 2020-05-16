@@ -47,12 +47,20 @@ final later = Date(21, 9, 2004);
 print(earlier.isBefore(later)); // True
 print(later.isAfter(earlier)); // Also true
 ```
+Here comes another handy `DateTime` extension:
+```dart
+DateTime(2002, 3, 11, 14, 56, 28).isTheSameDate(Date(11, 3, 2002));
+```
 On top of this, there are also operators `>` (is after) , `<` (is before), `<=`, `>=` and `==`.
 ### 🔨 Modifiers:
 Last but not least, there is a set of useful modifiers. Every `Date` object is immutable by default, so each of them creates a new `Date` object.
 ```dart
 date.addDays(2) == date + 2 // Always true
 date.subtractDays(7) == date - 7 // Also always true
+```
+You can also use the idiomatic copyWith function.
+```dart
+date.copyWith(day: 21, month: 9);
 ```
 Sorting an `Iterable` of `Date`s chronologically is even easier:
 ```dart

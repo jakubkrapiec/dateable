@@ -37,6 +37,11 @@ void main() {
   if (Date(21, 3, 2002).isBefore(Date(21, 9, 2004))) {
     print('This is also true.');
   }
+  // Checking if [DateTime] is on the same day as your [Date]
+  // is incredibly easy.
+  if (DateTime(2002, 3, 11, 14, 6).isTheSameDate(Date(11, 3, 2002))) {
+    print('A really nice extension.');
+  }
 
   // There are also some nice conversions:
   if (Date(21, 3, 2002).toDateTime() == DateTime(2002, 3, 21)) {
@@ -49,7 +54,12 @@ void main() {
     print('<3');
   }
 
-  // Finally, due to implementation of [Comparable] interface,
+  // You can enjoy the copyWith function!
+  if (Date(11, 3, 2002).copyWith(day: 21, month: 9) == Date(21, 9, 2002)) {
+    print('Useful for short, idiomatic mutations.');
+  }
+
+  // Finally, due to the implementation of [Comparable] interface,
   // you can sort easily:
   final result = [Date(21, 9, 2004), Date(24, 12, 2006), Date(11, 3, 2002)];
   result.sort((a, b) => a.compareTo(b));
