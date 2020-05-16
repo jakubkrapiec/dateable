@@ -42,7 +42,10 @@ void main() {
   if (DateTime(2002, 3, 11, 14, 6).isTheSameDate(Date(11, 3, 2002))) {
     print('A really nice extension.');
   }
-
+  // Checking if the [Date] is today, tomorrow or yesterday is even easier.
+  if (date.isToday() || date.isTomorrow() || date.isYesterday()) {
+    print('The star is born.');
+  }
   // There are also some nice conversions:
   if (Date(21, 3, 2002).toDateTime() == DateTime(2002, 3, 21)) {
     print('Nice.');

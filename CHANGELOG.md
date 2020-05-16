@@ -1,3 +1,9 @@
+## 1.2.0
+
+- Added `isToday` member function.
+- Added `isTomorrow` member function.
+- Added `isYesterday` member function.
+
 ## 1.1.0
 
 - Added `copyWith` member function.

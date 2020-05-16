@@ -100,6 +100,27 @@ void main() {
     test('isTheSameDate(Date) negative test', () {
       expect(Date(11, 3, 2002).isTheSameDate(Date(21, 9, 2004)), equals(false));
     });
+    test('isToday() positive test', () {
+      expect(DateTime.now().toDate().isToday(), equals(true));
+    });
+    test('isToday() negative test', () {
+      expect(DateTime.now().add(Duration(days: 1)).toDate().isToday(),
+          equals(false));
+    });
+    test('isTomorrow() positive test', () {
+      expect(DateTime.now().add(Duration(days: 1)).toDate().isTomorrow(),
+          equals(true));
+    });
+    test('isTomorrow() negative test', () {
+      expect(DateTime.now().toDate().isTomorrow(), equals(false));
+    });
+    test('isYesterday() positive test', () {
+      expect(DateTime.now().subtract(Duration(days: 1)).toDate().isYesterday(),
+          equals(true));
+    });
+    test('isYesterday() negative test', () {
+      expect(DateTime.now().toDate().isYesterday(), equals(false));
+    });
   });
   group('Conversion tests', () {
     test('toDateTime() test', () {

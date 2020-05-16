@@ -154,6 +154,21 @@ class Date implements Comparable<Date> {
   Date copyWith({int day, int month, int year}) {
     return Date(day ?? _date.day, month ?? _date.month, year ?? _date.year);
   }
+
+  /// Checks if [this] is today.
+  bool isToday() {
+    return _date.isTheSameDate(DateTime.now().toDate());
+  }
+
+  /// Checks if [this] is yesterday.
+  bool isYesterday() {
+    return _date.isTheSameDate(DateTime.now().toDate() - 1);
+  }
+
+  /// Checks if [this] is tomorrow.
+  bool isTomorrow() {
+    return _date.isTheSameDate(DateTime.now().toDate() + 1);
+  }
 }
 
 /// A set of extensions to work with [DateTime]s more seamlessly.

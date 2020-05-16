@@ -47,11 +47,19 @@ final later = Date(21, 9, 2004);
 print(earlier.isBefore(later)); // True
 print(later.isAfter(earlier)); // Also true
 ```
+On top of this, there are also operators `>` (is after) , `<` (is before), `<=`, `>=` and `==`.
+
 Here comes another handy `DateTime` extension:
 ```dart
 DateTime(2002, 3, 11, 14, 56, 28).isTheSameDate(Date(11, 3, 2002));
 ```
-On top of this, there are also operators `>` (is after) , `<` (is before), `<=`, `>=` and `==`.
+But if all you want is to check if your `Date` is nearby, here you are.
+```dart
+final date = Date(11, 3, 2002);
+date.isToday();
+date.isYesterday();
+date.isTomorrow();
+```
 ### 🔨 Modifiers:
 Last but not least, there is a set of useful modifiers. Every `Date` object is immutable by default, so each of them creates a new `Date` object.
 ```dart
