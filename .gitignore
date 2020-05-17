@@ -4,3 +4,6 @@ pubspec.lock
 build/
 doc/api/
 .vscode/
+test/.test_coverage.dart
+coverage_badge.svg
+coverage
