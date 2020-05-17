@@ -1,0 +1,19 @@
+on: ["push", "pull_request"]
+
+name: Coverage check
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image:  google/dart:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: pub get
+    - name: Generate coverage report
+      run: pub run test_coverage
+    - name: Submit to Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
