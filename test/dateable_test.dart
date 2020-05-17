@@ -130,7 +130,7 @@ void main() {
       expect(Date(11, 3, 2002).toIso8601(), equals('2002-03-11T00:00:00.000'));
     });
     test('toString() test', () {
-      expect(Date(11, 3, 2002).toString(), equals('11032002'));
+      expect(Date(2, 3, 104).toString(), equals('02030104'));
     });
     test('toDate() DateTime extension test', () {
       expect(DateTime(2002, 3, 11).toDate(), equals(Date(11, 3, 2002)));
