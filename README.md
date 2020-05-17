@@ -2,6 +2,7 @@
 # 📆 Date
 [![Pub](https://img.shields.io/pub/v/dateable.svg)](https://pub.dartlang.org/packages/dateable)
 ![Tests](https://github.com/SugaR256/dateable/workflows/Tests/badge.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/SugaR256/dateable/badge.svg?branch=master)](https://coveralls.io/github/SugaR256/dateable?branch=master)
 
 A Dart package to help you with managing dates easily. Can be used to store, convert, construct, parse and serialise dates. Calendar correctness is guaranteed by the usage of `DateTime` 's system under the hood.
 ## ⚙️ Import

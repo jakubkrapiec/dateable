@@ -1,3 +1,7 @@
+## 1.2.0+1
+
+- Added coverage badge to README.
+
 ## 1.2.0
 
 - Added `isToday` member function.
