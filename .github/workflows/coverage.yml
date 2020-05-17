@@ -1,12 +1,11 @@
-on: ["push", "pull_request"]
-
 name: Coverage check
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image:  google/dart:latest
+      image: google/dart:latest
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
