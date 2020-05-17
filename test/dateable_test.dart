@@ -26,6 +26,17 @@ void main() {
       }
       expect(exception, isFormatException);
     });
+    test('today constructor test', () {
+      expect(Date.today(), equals(DateTime.now().toDate()));
+    });
+    test('tomorrow constructor test', () {
+      expect(Date.tomorrow(),
+          equals(DateTime.now().add(Duration(days: 1)).toDate()));
+    });
+    test('yesterday constructor test', () {
+      expect(Date.yesterday(),
+          equals(DateTime.now().subtract(Duration(days: 1)).toDate()));
+    });
   });
   group('Comparision tests', () {
     test('compareTo(Date) test: negative', () {

@@ -18,6 +18,9 @@ final date = Date(31, 12, 2019);
 final date = Date.fromDateTime(DateTime(2019, 12, 31, 19, 1)); // Time of day is truncated
 final date = Date.parseIso8601('2019-12-31T18:23:48.956871'); // Time of day is truncated
 final date = Date.parse('31122019');
+final date = Date.today();
+final date = Date.yesterday();
+final date = Date.tomorrow();
 ```
 And a handy `DateTime` extension:
 ```dart

@@ -37,6 +37,7 @@ void main() {
   if (Date(21, 3, 2002).isBefore(Date(21, 9, 2004))) {
     print('This is also true.');
   }
+
   // Checking if [DateTime] is on the same day as your [Date]
   // is incredibly easy.
   if (DateTime(2002, 3, 11, 14, 6).isTheSameDate(Date(11, 3, 2002))) {
@@ -46,6 +47,11 @@ void main() {
   if (date.isToday() || date.isTomorrow() || date.isYesterday()) {
     print('The star is born.');
   }
+  // You also gain access to [today], [tomorrow] and [yesterday] constructors.
+  print(Date.yesterday().toString() +
+      Date.today().toString() +
+      Date.tomorrow().toString());
+
   // There are also some nice conversions:
   if (Date(21, 3, 2002).toDateTime() == DateTime(2002, 3, 21)) {
     print('Nice.');
@@ -56,7 +62,6 @@ void main() {
   if (Date(21, 3, 2002).toString() == '21032002') {
     print('<3');
   }
-
   // You can enjoy the copyWith function!
   if (Date(11, 3, 2002).copyWith(day: 21, month: 9) == Date(21, 9, 2002)) {
     print('Useful for short, idiomatic mutations.');

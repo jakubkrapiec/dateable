@@ -122,6 +122,17 @@ class Date implements Comparable<Date> {
     return _date.isTheSameDate(other);
   }
 
+  /// Returns today's date.
+  Date.today() : _date = _truncateTimeOfDay(DateTime.now());
+
+  /// Returns tomorrow's date.
+  Date.tomorrow()
+      : _date = _truncateTimeOfDay(DateTime.now().add(Duration(days: 1)));
+
+  /// Returns yesterday's date.
+  Date.yesterday()
+      : _date = _truncateTimeOfDay(DateTime.now().subtract(Duration(days: 1)));
+
   /// Returns day of the date represented by this object. Always in range [1; 31].
   int get day => _date.day;
 

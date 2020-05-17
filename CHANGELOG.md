@@ -1,3 +1,7 @@
+## 1.3.0
+
+- Added `today`, `tomorrow` and `yesterday` constructors.
+
 ## 1.2.0+1
 
 - Added test coverage badge to README.
