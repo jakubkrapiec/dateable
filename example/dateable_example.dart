@@ -56,7 +56,9 @@ void main() {
   }
 
   // You also gain access to [today], [tomorrow] and [yesterday] constructors.
-  print(Date.yesterday().toString() + Date.today().toString() + Date.tomorrow().toString());
+  print(Date.yesterday().toString() +
+      Date.today().toString() +
+      Date.tomorrow().toString());
 
   // There are also some nice conversions:
   if (Date(21, 3, 2002).toDateTime() == DateTime(2002, 3, 21)) {

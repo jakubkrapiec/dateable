@@ -62,7 +62,10 @@ class Date implements Comparable<Date> {
   /// [dateString] must not be null.
   Date.parse(final String dateString)
       : assert(dateString != null),
-        _date = DateTime(int.parse(dateString.substring(4, 8)), int.parse(dateString.substring(2, 4)), int.parse(dateString.substring(0, 2)));
+        _date = DateTime(
+            int.parse(dateString.substring(4, 8)),
+            int.parse(dateString.substring(2, 4)),
+            int.parse(dateString.substring(0, 2)));
 
   /// Returns a new [Date] with given amount of days subtracted from [this].
   /// [days] can be negative, in this case addition will happen. [days] must not be [null].
@@ -97,7 +100,10 @@ class Date implements Comparable<Date> {
 
   @override
   bool operator ==(final dynamic other) {
-    return other is Date && other.day == _date.day && other.month == _date.month && other.year == _date.year;
+    return other is Date &&
+        other.day == _date.day &&
+        other.month == _date.month &&
+        other.year == _date.year;
   }
 
   /// Checks if [this] is after [other].
@@ -153,10 +159,12 @@ class Date implements Comparable<Date> {
   Date.today() : _date = _truncateTimeOfDay(DateTime.now());
 
   /// Returns tomorrow's date.
-  Date.tomorrow() : _date = _truncateTimeOfDay(DateTime.now().add(Duration(days: 1)));
+  Date.tomorrow()
+      : _date = _truncateTimeOfDay(DateTime.now().add(Duration(days: 1)));
 
   /// Returns yesterday's date.
-  Date.yesterday() : _date = _truncateTimeOfDay(DateTime.now().subtract(Duration(days: 1)));
+  Date.yesterday()
+      : _date = _truncateTimeOfDay(DateTime.now().subtract(Duration(days: 1)));
 
   /// Returns day of the date represented by this object. Always in range [1; 31].
   int get day => _date.day;

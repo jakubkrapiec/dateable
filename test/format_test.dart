@@ -20,7 +20,9 @@ void main() {
       expect(date.format(['dd', '/', 'mm', '/', 'yy']), equals('21/09/04'));
     });
     test('Filtering test', () {
-      expect(date.format(['mmmayyddayyyy, it is ', 'dd', '.', 'mm', '.', 'yyyy']), equals('mmmayyddayyyy, it is 21.09.2004'));
+      expect(
+          date.format(['mmmayyddayyyy, it is ', 'dd', '.', 'mm', '.', 'yyyy']),
+          equals('mmmayyddayyyy, it is 21.09.2004'));
     });
   });
 }
