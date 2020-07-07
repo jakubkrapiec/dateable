@@ -88,6 +88,7 @@ class Date implements Comparable<Date> {
   /// Returns a new [Date] with given amount of days subtracted from [this].
   /// [days] can be negative, in this case addition will happen. [days] must not be [null].
   Date operator -(final int days) {
+    assert(days != null);
     return subtractDays(days);
   }
 
