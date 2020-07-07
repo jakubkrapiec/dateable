@@ -1,6 +1,6 @@
 ## 2.0.0
 
-- **BREAKING** Added `null` check asserts in constructors and methods.
+- **BREAKING:** Added `null` check asserts in constructors and methods.
 - Added `format` method and top-level constants `dd`, `mm`, `yyyy` and `yy` as its helpers.
 
 ## 1.3.0
