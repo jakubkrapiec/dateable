@@ -1,10 +1,10 @@
 
-# 📆 Date
+# 📆 Dateable
 [![Pub](https://img.shields.io/pub/v/dateable.svg)](https://pub.dartlang.org/packages/dateable)
 ![Tests](https://github.com/SugaR256/dateable/workflows/Tests/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/SugaR256/dateable/badge.svg?branch=master)](https://coveralls.io/github/SugaR256/dateable?branch=master)
 
-A Dart package to help you with managing dates easily. Can be used to store, convert, construct, parse and serialise dates. Calendar correctness is guaranteed by the usage of `DateTime` 's system under the hood.
+A Dart package to help you with managing dates easily. Can be used to store, format, convert, construct, parse and serialise dates. Calendar correctness is guaranteed by the usage of `DateTime` 's system under the hood.
 ## ⚙️ Import
 In your `.dart` files:
 ```dart
@@ -63,6 +63,19 @@ final date = Date(11, 3, 2002);
 date.isToday();
 date.isYesterday();
 date.isTomorrow();
+```
+### 📰 Formatting:
+You can format your `Date`s to `String`s both with top-level constants and `String` literals:
+* yyyy - 4 digit year, i.e. 1997
+* yy - 2 digit year, i.e. 97
+* mm - 2 digit month, i.e. 03
+* dd - 2 digit day, i.e. 11
+Both of the bellow options are correct:
+```dart
+Date(11, 3, 2002).format([dd, '-', mm, '-', yyyy])
+```
+```dart
+Date(11, 3, 2002).format(['dd', '-', 'mm', 'yyyy'])
 ```
 ### 🔨 Modifiers:
 Last but not least, there is a set of useful modifiers. Every `Date` object is immutable by default, so each of them creates a new `Date` object.
