@@ -1,3 +1,7 @@
+## 2.1.1
+
+- Fixed a typo in README.
+
 ## 2.1.0
 
 - Added assertion error messages.
