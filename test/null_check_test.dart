@@ -78,6 +78,11 @@ void main() {
         Date(11, 3, 2002).isBefore(null);
       }, throwsA(isA<AssertionError>()));
     });
+    test('isAfter method null check test', () {
+      expect(() {
+        Date(11, 3, 2002).isAfter(null);
+      }, throwsA(isA<AssertionError>()));
+    });
     test('isTheSameDate method null check test', () {
       expect(() {
         Date(11, 3, 2002).isTheSameDate(null);
