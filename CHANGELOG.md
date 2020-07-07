@@ -1,3 +1,8 @@
+## 2.1.0
+
+- Added assertion error messages.
+- Fixed typos in documentation.
+
 ## 2.0.0
 
 - **BREAKING:** Added `null` check asserts in constructors and methods.

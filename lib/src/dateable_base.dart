@@ -6,7 +6,7 @@ class Date implements Comparable<Date> {
   /// Converts a [DateTime] to a [Date].
   /// [dateTime] must not be [null].
   Date.fromDateTime(final DateTime dateTime)
-      : assert(dateTime != null),
+      : assert(dateTime != null, 'dateTime must not be null'),
         _date = _truncateTimeOfDay(dateTime);
 
   /// Returns [DateTime] object with the date of [this] and time values at 00:00.
@@ -36,9 +36,9 @@ class Date implements Comparable<Date> {
   /// Creates a [Date] object from day, month and year values.
   /// Performs validation. [day], [month] and [year] must not be [null].
   Date(final int day, final int month, final int year)
-      : assert(day != null),
-        assert(month != null),
-        assert(year != null),
+      : assert(day != null, 'day must not be null'),
+        assert(month != null, 'month must not be null'),
+        assert(year != null, 'year must not be null'),
         _date = DateTime(year, month, day);
 
   /// Parses given [String] to a new [Date] object. Besides ISO 8601 works with
@@ -46,7 +46,7 @@ class Date implements Comparable<Date> {
   /// Performs validation. Throws [FormatException] when the input can't be parsed.
   /// [dateString] must not be [null].
   Date.parseIso8601(final String dateString)
-      : assert(dateString != null),
+      : assert(dateString != null, 'dateString must not be null'),
         _date = _truncateTimeOfDay(DateTime.parse(dateString));
 
   /// Returns an ISO8601 [String] representing [this].
@@ -61,7 +61,7 @@ class Date implements Comparable<Date> {
   /// Performs validation. Throws [FormatException] when argument contains non-numbers.
   /// [dateString] must not be null.
   Date.parse(final String dateString)
-      : assert(dateString != null),
+      : assert(dateString != null, 'dateString must not be null'),
         _date = DateTime(
             int.parse(dateString.substring(4, 8)),
             int.parse(dateString.substring(2, 4)),
@@ -70,28 +70,28 @@ class Date implements Comparable<Date> {
   /// Returns a new [Date] with given amount of days subtracted from [this].
   /// [days] can be negative, in this case addition will happen. [days] must not be [null].
   Date subtractDays(final int days) {
-    assert(days != null);
+    assert(days != null, 'days must not be null');
     return _date.subtract(Duration(days: days)).toDate();
   }
 
   /// Returns a new [Date] with given amount of days added to [this].
   /// [days] can be negative, in this case subtraction will happen. [days] must not be [null].
   Date addDays(final int days) {
-    assert(days != null);
+    assert(days != null, 'days must not be null');
     return _date.add(Duration(days: days)).toDate();
   }
 
   /// Returns a new [Date] with given amount of days added to [this].
   /// [days] can be negative, in this case subtraction will happen. [days] must not be [null].
   Date operator +(final int days) {
-    assert(days != null);
+    assert(days != null, 'days must not be null');
     return addDays(days);
   }
 
   /// Returns a new [Date] with given amount of days subtracted from [this].
   /// [days] can be negative, in this case addition will happen. [days] must not be [null].
   Date operator -(final int days) {
-    assert(days != null);
+    assert(days != null, 'days must not be null');
     return subtractDays(days);
   }
 
@@ -99,59 +99,58 @@ class Date implements Comparable<Date> {
   int get hashCode => toString().hashCode;
 
   @override
-  bool operator ==(final dynamic other) {
-    return other is Date &&
-        other.day == _date.day &&
-        other.month == _date.month &&
-        other.year == _date.year;
-  }
+  bool operator ==(final dynamic other) =>
+      other is Date &&
+      other.day == _date.day &&
+      other.month == _date.month &&
+      other.year == _date.year;
 
   /// Checks if [this] is after [other].
   /// [other] must not be [null].
   bool operator >(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return _date.isAfter(other.toDateTime());
   }
 
   /// Checks if [this] is before [other].
   /// [other] must not be [null].
   bool operator <(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return _date.isBefore(other.toDateTime());
   }
 
   /// Checks if [this] is after or at the same day as [other].
   /// [other] must not be [null].
   bool operator >=(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return this == other || this > other;
   }
 
   /// Checks if [this] is before or at the same day as [other].
   /// [other] must not be [null].
   bool operator <=(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return this == other || this < other;
   }
 
   /// Checks if [this] is before [other].
   /// [other] must not be [null].
   bool isBefore(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return this < other;
   }
 
   /// Checks if [this] is after [other].
   /// [other] must not be [null].
   bool isAfter(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return this > other;
   }
 
   /// Checks if [this] is the same date as [other].
   /// [other] must not be [null].
   bool isTheSameDate(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return _date.isTheSameDate(other);
   }
 
@@ -179,9 +178,9 @@ class Date implements Comparable<Date> {
   /// format ddmmyyyy.
   @override
   String toString() {
-    var day = _date.day.toString();
-    var month = _date.month.toString();
-    var year = _date.year.toString();
+    final day = _date.day.toString();
+    final month = _date.month.toString();
+    final year = _date.year.toString();
     return '${_modifyLength(day, 2)}${_modifyLength(month, 2)}${_modifyLength(year, 4)}';
   }
 
@@ -195,24 +194,17 @@ class Date implements Comparable<Date> {
   }
 
   /// Returns new [Date] modified with given input.
-  Date copyWith({final int day, final int month, final int year}) {
-    return Date(day ?? _date.day, month ?? _date.month, year ?? _date.year);
-  }
+  Date copyWith({final int day, final int month, final int year}) =>
+      Date(day ?? _date.day, month ?? _date.month, year ?? _date.year);
 
   /// Checks if [this] is today.
-  bool isToday() {
-    return _date.isTheSameDate(DateTime.now().toDate());
-  }
+  bool isToday() => _date.isTheSameDate(DateTime.now().toDate());
 
   /// Checks if [this] is yesterday.
-  bool isYesterday() {
-    return _date.isTheSameDate(DateTime.now().toDate() - 1);
-  }
+  bool isYesterday() => _date.isTheSameDate(DateTime.now().toDate() - 1);
 
   /// Checks if [this] is tomorrow.
-  bool isTomorrow() {
-    return _date.isTheSameDate(DateTime.now().toDate() + 1);
-  }
+  bool isTomorrow() => _date.isTheSameDate(DateTime.now().toDate() + 1);
 
   /// Formats [this] with a given input.
   /// I.e. to get the [String] `"11-03-2002"`, you want to call `Date(11, 3, 2002).format([dd, '-', mm, '-', yyyy])`.
@@ -226,8 +218,8 @@ class Date implements Comparable<Date> {
   /// You can use all of them both as "dd" and dd.
   /// [formats] and all of its content must not be [null].
   String format(final List<String> formats) {
-    assert(formats != null);
-    assert(!formats.contains(null));
+    assert(formats != null, 'formats must not be null');
+    assert(!formats.contains(null), 'formats must not contain null');
     final result = StringBuffer();
     for (final format in formats) {
       switch (format) {
@@ -267,14 +259,12 @@ const String yyyy = 'yyyy';
 /// A set of extensions to work with [DateTime]s more seamlessly.
 extension DateExtensions on DateTime {
   /// Converts [this] to a corresponding [Date] object.
-  Date toDate() {
-    return Date.fromDateTime(this);
-  }
+  Date toDate() => Date.fromDateTime(this);
 
   /// Checks is [this] is on the same date as [other].
   /// [other] must not be [null].
   bool isTheSameDate(final Date other) {
-    assert(other != null);
+    assert(other != null, 'other must not be null');
     return toDate() == other;
   }
 }
