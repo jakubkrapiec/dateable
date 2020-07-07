@@ -217,10 +217,10 @@ class Date implements Comparable<Date> {
   /// Formats [this] with a given input.
   /// I.e. to get the [String] `"11-03-2002"`, you want to call `Date(11, 3, 2002).format([dd, '-', mm, '-', yyyy])`.
   /// Available date modifiers are:
-  /// * yyyy - 4 digit year, i.e. 2002.
-  /// * yy - 2 digit year, i.e. 02.
-  /// * mm - 2 digit month, i.e. 03.
-  /// * dd - 2 digit day, i.e. 11.
+  /// * `yyyy` - 4 digit year, i.e. 2002.
+  /// * `yy` - 2 digit year, i.e. 02.
+  /// * `mm` - 2 digit month, i.e. 03.
+  /// * `dd` - 2 digit day, i.e. 11.
   ///
   /// Everything else will be left without change.
   /// You can use all of them both as "dd" and dd.

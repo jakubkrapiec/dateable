@@ -66,10 +66,10 @@ date.isTomorrow();
 ```
 ### 📰 Formatting:
 You can format your `Date`s to `String`s both with top-level constants and `String` literals:
-* yyyy - 4 digit year, i.e. 1997
-* yy - 2 digit year, i.e. 97
-* mm - 2 digit month, i.e. 03
-* dd - 2 digit day, i.e. 11
+* `yyyy` - 4 digit year, i.e. 1997
+* `yy` - 2 digit year, i.e. 97
+* `mm` - 2 digit month, i.e. 03
+* `dd` - 2 digit day, i.e. 11
 Both of the below options are correct:
 ```dart
 Date(11, 3, 2002).format([dd, '-', mm, '-', yyyy])
