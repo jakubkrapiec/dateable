@@ -8,14 +8,17 @@ void main() {
   if (date == Date.fromDateTime(DateTime(2002, 3, 21))) {
     print('True!');
   }
+
   // ...or use an extension...
   if (date == DateTime(2002, 3, 21).toDate()) {
     print('Also true!');
   }
+
   // ...or parse from [String] ddmmyyyy...
   if (date == Date.parse('21032002')) {
     print('This is awesome.');
   }
+
   // ...or even parse from an ISO8601 [String]!
   if (date == Date.parseIso8601('2002-03-21T14:35:26.896')) {
     print('Very useful.');
@@ -25,14 +28,17 @@ void main() {
   if (Date(1, 1, 2020) - 2 == Date(1, 1, 2020).subtractDays(2)) {
     print('Yes, they do!');
   }
+
   // The same with addDays and operator+.
   if (Date(31, 12, 2021) + 18 == Date(1, 1, 2022).addDays(17)) {
     print(':)');
   }
+
   // You can also use operators >, <, >=, <= and ==...
   if (Date(21, 3, 2002) < Date(21, 9, 2004)) {
     print('Spoiler: it is true.');
   }
+
   // ...as well as isAfter() and isBefore()!
   if (Date(21, 3, 2002).isBefore(Date(21, 9, 2004))) {
     print('This is also true.');
@@ -43,14 +49,14 @@ void main() {
   if (DateTime(2002, 3, 11, 14, 6).isTheSameDate(Date(11, 3, 2002))) {
     print('A really nice extension.');
   }
+
   // Checking if the [Date] is today, tomorrow or yesterday is even easier.
   if (date.isToday() || date.isTomorrow() || date.isYesterday()) {
     print('The star is born.');
   }
+
   // You also gain access to [today], [tomorrow] and [yesterday] constructors.
-  print(Date.yesterday().toString() +
-      Date.today().toString() +
-      Date.tomorrow().toString());
+  print(Date.yesterday().toString() + Date.today().toString() + Date.tomorrow().toString());
 
   // There are also some nice conversions:
   if (Date(21, 3, 2002).toDateTime() == DateTime(2002, 3, 21)) {
@@ -62,10 +68,14 @@ void main() {
   if (Date(21, 3, 2002).toString() == '21032002') {
     print('<3');
   }
+
   // You can enjoy the copyWith function!
   if (Date(11, 3, 2002).copyWith(day: 21, month: 9) == Date(21, 9, 2002)) {
     print('Useful for short, idiomatic mutations.');
   }
+
+  // Formatting is as easy as it gets!
+  print(date.format([dd, '-', mm, '-', yyyy]));
 
   // Finally, due to the implementation of [Comparable] interface,
   // you can sort easily:
