@@ -1,3 +1,7 @@
+## 2.1.1+1
+
+- Updated `meta` dependency version.
+
 ## 2.1.1
 
 - Fixed a typo in README.

@@ -29,6 +29,7 @@ class Date implements Comparable<Date> {
     }
   }
 
+  /// Get rid of the given [DateTime]'s time of day data, leaving it all zeroes.
   static DateTime _truncateTimeOfDay(final DateTime dateTime) {
     return DateTime(dateTime.year, dateTime.month, dateTime.day);
   }
@@ -55,6 +56,7 @@ class Date implements Comparable<Date> {
     return _date.toIso8601String();
   }
 
+  /// The [DateTime] object holding the state of [this].
   final DateTime _date;
 
   /// Parses [String] to [Date] object. [String] must be formatted as ddmmyyyy.
@@ -175,7 +177,7 @@ class Date implements Comparable<Date> {
   int get year => _date.year;
 
   /// Returns this [Date]'s object representations as [String], with
-  /// format ddmmyyyy.
+  /// format ddmmyyyy. For other formatting options, use [format] method.
   @override
   String toString() {
     final day = _date.day.toString();
@@ -184,6 +186,9 @@ class Date implements Comparable<Date> {
     return '${_modifyLength(day, 2)}${_modifyLength(month, 2)}${_modifyLength(year, 4)}';
   }
 
+  /// Modified the length of the [digits]. If original length is shorter than [designatedLength],
+  /// appropriate amount of 0s are added at the beginning. If original length is shorter than
+  /// [degisnatedLength], front digits of [digits] are truncated.
   String _modifyLength(final String digits, final int designatedLength) {
     final difference = designatedLength - digits.length;
     if (difference < 0) {
@@ -198,13 +203,13 @@ class Date implements Comparable<Date> {
       Date(day ?? _date.day, month ?? _date.month, year ?? _date.year);
 
   /// Checks if [this] is today.
-  bool isToday() => _date.isTheSameDate(DateTime.now().toDate());
+  bool isToday() => _date.isTheSameDate(Date.today());
 
   /// Checks if [this] is yesterday.
-  bool isYesterday() => _date.isTheSameDate(DateTime.now().toDate() - 1);
+  bool isYesterday() => _date.isTheSameDate(Date.today() - 1);
 
   /// Checks if [this] is tomorrow.
-  bool isTomorrow() => _date.isTheSameDate(DateTime.now().toDate() + 1);
+  bool isTomorrow() => _date.isTheSameDate(Date.today() + 1);
 
   /// Formats [this] with a given input.
   /// I.e. to get the [String] `"11-03-2002"`, you want to call `Date(11, 3, 2002).format([dd, '-', mm, '-', yyyy])`.
