@@ -1,6 +1,6 @@
 name: dateable
 description: A Dart package to help you with managing dates easily. Can be used to store, format, convert, construct, parse and serialise dates.
-version: 2.1.1+1
+version: 2.1.1+2
 repository: https://github.com/SugaR256/dateable
 homepage: https://github.com/SugaR256/dateable
 
@@ -8,7 +8,7 @@ environment:
   sdk: '>=2.7.0 <3.0.0'
 
 dependencies:
-  meta: ^1.2.2
+  meta: '>=1.1.8 <2.0.0'
 
 dev_dependencies:
   pedantic: ^1.9.2

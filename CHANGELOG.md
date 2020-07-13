@@ -1,3 +1,7 @@
+## 2.1.1+2
+
+- Fixed `meta` dependency version compatibility.
+
 ## 2.1.1+1
 
 - Updated `meta` dependency version.

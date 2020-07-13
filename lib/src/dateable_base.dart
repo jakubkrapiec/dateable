@@ -10,9 +10,7 @@ class Date implements Comparable<Date> {
         _date = _truncateTimeOfDay(dateTime);
 
   /// Returns [DateTime] object with the date of [this] and time values at 00:00.
-  DateTime toDateTime() {
-    return _date;
-  }
+  DateTime toDateTime() => _date;
 
   /// Returns [0] if [this] is at the same date as [other], [1] if [this] is
   /// after [other] and [-1] if [this] is before [other].
@@ -30,9 +28,8 @@ class Date implements Comparable<Date> {
   }
 
   /// Get rid of the given [DateTime]'s time of day data, leaving it all zeroes.
-  static DateTime _truncateTimeOfDay(final DateTime dateTime) {
-    return DateTime(dateTime.year, dateTime.month, dateTime.day);
-  }
+  static DateTime _truncateTimeOfDay(final DateTime dateTime) =>
+      DateTime(dateTime.year, dateTime.month, dateTime.day);
 
   /// Creates a [Date] object from day, month and year values.
   /// Performs validation. [day], [month] and [year] must not be [null].
@@ -52,9 +49,7 @@ class Date implements Comparable<Date> {
 
   /// Returns an ISO8601 [String] representing [this].
   /// ISO8601 in this case means: yyyy-mm-ddT00:00:00.000000
-  String toIso8601() {
-    return _date.toIso8601String();
-  }
+  String toIso8601() => _date.toIso8601String();
 
   /// The [DateTime] object holding the state of [this].
   final DateTime _date;
@@ -188,7 +183,7 @@ class Date implements Comparable<Date> {
 
   /// Modified the length of the [digits]. If original length is shorter than [designatedLength],
   /// appropriate amount of 0s are added at the beginning. If original length is shorter than
-  /// [degisnatedLength], front digits of [digits] are truncated.
+  /// [designatedLength], front digits of [digits] are truncated.
   String _modifyLength(final String digits, final int designatedLength) {
     final difference = designatedLength - digits.length;
     if (difference < 0) {
@@ -228,16 +223,16 @@ class Date implements Comparable<Date> {
     final result = StringBuffer();
     for (final format in formats) {
       switch (format) {
-        case 'yyyy':
+        case yyyy:
           result.write(_modifyLength(_date.year.toString(), 4));
           break;
-        case 'yy':
+        case yy:
           result.write(_modifyLength(_date.year.toString(), 2));
           break;
-        case 'dd':
+        case dd:
           result.write(_modifyLength(_date.day.toString(), 2));
           break;
-        case 'mm':
+        case mm:
           result.write(_modifyLength(_date.month.toString(), 2));
           break;
         default:
