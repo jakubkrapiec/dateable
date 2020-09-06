@@ -1,3 +1,9 @@
+## 2.1.1+3
+
+- Fixed typo in CHANGELOG.
+- Added Buy Me A Coffee Button to README.
+- Update dependencies.
+
 ## 2.1.1+2
 
 - Fixed `meta` dependency version compatibility.
@@ -54,7 +60,7 @@
 
 ## 1.0.0+1
 
-- Minot changes to better comply with `pana` requirements.
+- Minor changes to better comply with `pana` requirements.
 
 ## 1.0.0
 
