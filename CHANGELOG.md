@@ -1,8 +1,8 @@
 ## 2.1.1+3
 
-- Fixed typo in CHANGELOG.
-- Added Buy Me A Coffee Button to README.
-- Update dependencies.
+- Fixed a typo in CHANGELOG.
+- Added the Buy Me A Coffee Button to README.
+- Updated dependencies.
 
 ## 2.1.1+2
 
