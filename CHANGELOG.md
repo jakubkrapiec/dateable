@@ -1,3 +1,7 @@
+## 3.0.0
+
+- **BREAKING:** Migrated to NNBD.
+
 ## 2.1.1+4
 
 - Upgraded dependencies.

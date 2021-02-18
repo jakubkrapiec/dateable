@@ -4,10 +4,8 @@ import 'package:meta/meta.dart';
 @immutable
 class Date implements Comparable<Date> {
   /// Converts a [DateTime] to a [Date].
-  /// [dateTime] must not be [null].
   Date.fromDateTime(final DateTime dateTime)
-      : assert(dateTime != null, 'dateTime must not be null'),
-        _date = _truncateTimeOfDay(dateTime);
+      : _date = _truncateTimeOfDay(dateTime);
 
   /// Returns [DateTime] object with the date of [this] and time values at 00:00.
   DateTime toDateTime() => _date;
@@ -31,21 +29,15 @@ class Date implements Comparable<Date> {
   static DateTime _truncateTimeOfDay(final DateTime dateTime) =>
       DateTime(dateTime.year, dateTime.month, dateTime.day);
 
-  /// Creates a [Date] object from day, month and year values.
-  /// Performs validation. [day], [month] and [year] must not be [null].
+  /// Creates a [Date] object from day, month and year values. Performs validation.
   Date(final int day, final int month, final int year)
-      : assert(day != null, 'day must not be null'),
-        assert(month != null, 'month must not be null'),
-        assert(year != null, 'year must not be null'),
-        _date = DateTime(year, month, day);
+      : _date = DateTime(year, month, day);
 
   /// Parses given [String] to a new [Date] object. Besides ISO 8601 works with
   /// every format of [String] that [DateTime.parse] would work with.
   /// Performs validation. Throws [FormatException] when the input can't be parsed.
-  /// [dateString] must not be [null].
   Date.parseIso8601(final String dateString)
-      : assert(dateString != null, 'dateString must not be null'),
-        _date = _truncateTimeOfDay(DateTime.parse(dateString));
+      : _date = _truncateTimeOfDay(DateTime.parse(dateString));
 
   /// Returns an ISO8601 [String] representing [this].
   /// ISO8601 in this case means: yyyy-mm-ddT00:00:00.000000
@@ -56,41 +48,28 @@ class Date implements Comparable<Date> {
 
   /// Parses [String] to [Date] object. [String] must be formatted as ddmmyyyy.
   /// Performs validation. Throws [FormatException] when argument contains non-numbers.
-  /// [dateString] must not be null.
   Date.parse(final String dateString)
-      : assert(dateString != null, 'dateString must not be null'),
-        _date = DateTime(
+      : _date = DateTime(
             int.parse(dateString.substring(4, 8)),
             int.parse(dateString.substring(2, 4)),
             int.parse(dateString.substring(0, 2)));
 
   /// Returns a new [Date] with given amount of days subtracted from [this].
-  /// [days] can be negative, in this case addition will happen. [days] must not be [null].
-  Date subtractDays(final int days) {
-    assert(days != null, 'days must not be null');
-    return _date.subtract(Duration(days: days)).toDate();
-  }
+  /// [days] can be negative, in this case addition will happen.
+  Date subtractDays(final int days) =>
+      _date.subtract(Duration(days: days)).toDate();
 
   /// Returns a new [Date] with given amount of days added to [this].
-  /// [days] can be negative, in this case subtraction will happen. [days] must not be [null].
-  Date addDays(final int days) {
-    assert(days != null, 'days must not be null');
-    return _date.add(Duration(days: days)).toDate();
-  }
+  /// [days] can be negative, in this case subtraction will happen.
+  Date addDays(final int days) => _date.add(Duration(days: days)).toDate();
 
   /// Returns a new [Date] with given amount of days added to [this].
-  /// [days] can be negative, in this case subtraction will happen. [days] must not be [null].
-  Date operator +(final int days) {
-    assert(days != null, 'days must not be null');
-    return addDays(days);
-  }
+  /// [days] can be negative, in this case subtraction will happen.
+  Date operator +(final int days) => addDays(days);
 
   /// Returns a new [Date] with given amount of days subtracted from [this].
-  /// [days] can be negative, in this case addition will happen. [days] must not be [null].
-  Date operator -(final int days) {
-    assert(days != null, 'days must not be null');
-    return subtractDays(days);
-  }
+  /// [days] can be negative, in this case addition will happen.
+  Date operator -(final int days) => subtractDays(days);
 
   @override
   int get hashCode => toString().hashCode;
@@ -103,53 +82,25 @@ class Date implements Comparable<Date> {
       other.year == _date.year;
 
   /// Checks if [this] is after [other].
-  /// [other] must not be [null].
-  bool operator >(final Date other) {
-    assert(other != null, 'other must not be null');
-    return _date.isAfter(other.toDateTime());
-  }
+  bool operator >(final Date other) => _date.isAfter(other.toDateTime());
 
   /// Checks if [this] is before [other].
-  /// [other] must not be [null].
-  bool operator <(final Date other) {
-    assert(other != null, 'other must not be null');
-    return _date.isBefore(other.toDateTime());
-  }
+  bool operator <(final Date other) => _date.isBefore(other.toDateTime());
 
   /// Checks if [this] is after or at the same day as [other].
-  /// [other] must not be [null].
-  bool operator >=(final Date other) {
-    assert(other != null, 'other must not be null');
-    return this == other || this > other;
-  }
+  bool operator >=(final Date other) => this == other || this > other;
 
   /// Checks if [this] is before or at the same day as [other].
-  /// [other] must not be [null].
-  bool operator <=(final Date other) {
-    assert(other != null, 'other must not be null');
-    return this == other || this < other;
-  }
+  bool operator <=(final Date other) => this == other || this < other;
 
   /// Checks if [this] is before [other].
-  /// [other] must not be [null].
-  bool isBefore(final Date other) {
-    assert(other != null, 'other must not be null');
-    return this < other;
-  }
+  bool isBefore(final Date other) => this < other;
 
   /// Checks if [this] is after [other].
-  /// [other] must not be [null].
-  bool isAfter(final Date other) {
-    assert(other != null, 'other must not be null');
-    return this > other;
-  }
+  bool isAfter(final Date other) => this > other;
 
   /// Checks if [this] is the same date as [other].
-  /// [other] must not be [null].
-  bool isTheSameDate(final Date other) {
-    assert(other != null, 'other must not be null');
-    return _date.isTheSameDate(other);
-  }
+  bool isTheSameDate(final Date other) => _date.isTheSameDate(other);
 
   /// Returns today's date.
   Date.today() : _date = _truncateTimeOfDay(DateTime.now());
@@ -194,7 +145,7 @@ class Date implements Comparable<Date> {
   }
 
   /// Returns new [Date] modified with given input.
-  Date copyWith({final int day, final int month, final int year}) =>
+  Date copyWith({final int? day, final int? month, final int? year}) =>
       Date(day ?? _date.day, month ?? _date.month, year ?? _date.year);
 
   /// Checks if [this] is today.
@@ -216,10 +167,7 @@ class Date implements Comparable<Date> {
   ///
   /// Everything else will be left without change.
   /// You can use all of them both as "dd" and dd.
-  /// [formats] and all of its content must not be [null].
   String format(final List<String> formats) {
-    assert(formats != null, 'formats must not be null');
-    assert(!formats.contains(null), 'formats must not contain null');
     final result = StringBuffer();
     for (final format in formats) {
       switch (format) {
@@ -262,9 +210,5 @@ extension DateExtensions on DateTime {
   Date toDate() => Date.fromDateTime(this);
 
   /// Checks is [this] is on the same date as [other].
-  /// [other] must not be [null].
-  bool isTheSameDate(final Date other) {
-    assert(other != null, 'other must not be null');
-    return toDate() == other;
-  }
+  bool isTheSameDate(final Date other) => toDate() == other;
 }
