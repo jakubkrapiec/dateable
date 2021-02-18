@@ -1,3 +1,7 @@
+## 2.1.1+4
+
+- Upgraded dependencies.
+
 ## 2.1.1+3
 
 - Fixed a typo in CHANGELOG.
