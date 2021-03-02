@@ -1,4 +1,4 @@
-name: Coverage check
+name: coverage check
 on: [push, pull_request]
 
 jobs:
