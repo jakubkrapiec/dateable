@@ -1,3 +1,7 @@
+## 3.0.0+1
+
+- Improved README formatting.
+
 ## 3.0.0
 
 - **BREAKING:** Migrated to NNBD.

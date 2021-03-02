@@ -3,9 +3,9 @@
 [![Pub](https://img.shields.io/pub/v/dateable.svg)](https://pub.dartlang.org/packages/dateable)
 ![Tests](https://github.com/SugaR256/dateable/workflows/Tests/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/SugaR256/dateable/badge.svg?branch=master)](https://coveralls.io/github/SugaR256/dateable?branch=master)
-<a href="https://www.buymeacoffee.com/jakubkrapiec" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="20"  width="85" style="height: 20px !important;width: 85px !important;" ></a>
+<a href="https://www.buymeacoffee.com/jakubkrapiec" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="20"  width="85" style="height: 20px !important;width: 85px !important;"></a>
 
-A Dart package to help you with managing dates easily. Can be used to store, format, convert, construct, parse and serialise dates. Calendar correctness is guaranteed by the usage of `DateTime` 's system under the hood.
+A Dart package to help you with managing dates easily. Can be used to store, format, convert, construct, parse and serialise dates. Calendar correctness is guaranteed by the usage of `DateTime`'s system under the hood.
 
 ## ⚙️ Import
 
@@ -17,7 +17,7 @@ import 'package:dateable/dateable.dart';
 
 ## ⚗️ Usage
 
-### 👷 Constructors:
+### 👷 Constructors
 
 Variety of different constructors allows for great flexibility and interoperability with other types.
 
@@ -39,7 +39,7 @@ final date = DateTime(2019, 12, 31, 13, 26).toDate(); // Time of day is truncate
 
 All of the above result in the same `date` object!
 
-### 📅 Getters:
+### 📅 Getters
 
 There are three getters. Simple and easy.
 
@@ -50,7 +50,7 @@ print(date.month); // Prints 3
 print(date.year); // Prints 2002
 ```
 
-### ↔️ Conversion methods:
+### ↔️ Conversion methods
 
 `Date` allows for seamless and easy conversions to most commonly used representations!
 
@@ -61,7 +61,7 @@ print(date.toIso8601()); // Prints 2002-03-11T00:00:00.000
 print(date.toString()); // Prints 11032002
 ```
 
-### 📊 Comparisions:
+### 📊 Comparisions
 
 Comparisions work just like in your well-known `DateTime` objects!
 
@@ -89,7 +89,7 @@ date.isYesterday();
 date.isTomorrow();
 ```
 
-### 📰 Formatting:
+### 📰 Formatting
 
 You can format your `Date`s to `String`s both with top-level constants and with `String` literals:
 
@@ -108,7 +108,7 @@ Date(11, 3, 2002).format([dd, '-', mm, '-', yyyy])
 Date(11, 3, 2002).format(['dd', '-', 'mm', 'yyyy'])
 ```
 
-### 🔨 Modifiers:
+### 🔨 Modifiers
 
 Last but not least, there is a set of useful modifiers. Every `Date` object is immutable by default, so each of them creates a new `Date` object.
 
