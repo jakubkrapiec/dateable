@@ -1,7 +1,6 @@
 # 📆 Dateable
 
 [![Pub](https://img.shields.io/pub/v/dateable.svg)](https://pub.dartlang.org/packages/dateable)
-![Tests](https://github.com/SugaR256/dateable/workflows/Tests/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/SugaR256/dateable/badge.svg?branch=master)](https://coveralls.io/github/SugaR256/dateable?branch=master)
 <a href="https://www.buymeacoffee.com/jakubkrapiec" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="20"  width="85" style="height: 20px !important;width: 85px !important;"></a>
 
