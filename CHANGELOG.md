@@ -1,3 +1,9 @@
+## 3.0.0+2
+
+- Improved performance.
+- Added support for package development in Android Studio in .gitignore.
+- Introduced stricter internal linting.
+
 ## 3.0.0+1
 
 - Improved README formatting.

@@ -4,8 +4,7 @@ import 'package:meta/meta.dart';
 @immutable
 class Date implements Comparable<Date> {
   /// Converts a [DateTime] to a [Date].
-  Date.fromDateTime(final DateTime dateTime)
-      : _date = _truncateTimeOfDay(dateTime);
+  Date.fromDateTime(final DateTime dateTime) : _date = _truncateTimeOfDay(dateTime);
 
   /// Returns [DateTime] object with the date of [this] and time values at 00:00.
   DateTime toDateTime() => _date;
@@ -26,18 +25,15 @@ class Date implements Comparable<Date> {
   }
 
   /// Get rid of the given [DateTime]'s time of day data, leaving it all zeroes.
-  static DateTime _truncateTimeOfDay(final DateTime dateTime) =>
-      DateTime(dateTime.year, dateTime.month, dateTime.day);
+  static DateTime _truncateTimeOfDay(final DateTime dateTime) => DateTime(dateTime.year, dateTime.month, dateTime.day);
 
   /// Creates a [Date] object from day, month and year values. Performs validation.
-  Date(final int day, final int month, final int year)
-      : _date = DateTime(year, month, day);
+  Date(final int day, final int month, final int year) : _date = DateTime(year, month, day);
 
   /// Parses given [String] to a new [Date] object. Besides ISO 8601 works with
   /// every format of [String] that [DateTime.parse] would work with.
   /// Performs validation. Throws [FormatException] when the input can't be parsed.
-  Date.parseIso8601(final String dateString)
-      : _date = _truncateTimeOfDay(DateTime.parse(dateString));
+  Date.parseIso8601(final String dateString) : _date = _truncateTimeOfDay(DateTime.parse(dateString));
 
   /// Returns an ISO8601 [String] representing [this].
   /// ISO8601 in this case means: yyyy-mm-ddT00:00:00.000000
@@ -49,15 +45,12 @@ class Date implements Comparable<Date> {
   /// Parses [String] to [Date] object. [String] must be formatted as ddmmyyyy.
   /// Performs validation. Throws [FormatException] when argument contains non-numbers.
   Date.parse(final String dateString)
-      : _date = DateTime(
-            int.parse(dateString.substring(4, 8)),
-            int.parse(dateString.substring(2, 4)),
+      : _date = DateTime(int.parse(dateString.substring(4, 8)), int.parse(dateString.substring(2, 4)),
             int.parse(dateString.substring(0, 2)));
 
   /// Returns a new [Date] with given amount of days subtracted from [this].
   /// [days] can be negative, in this case addition will happen.
-  Date subtractDays(final int days) =>
-      _date.subtract(Duration(days: days)).toDate();
+  Date subtractDays(final int days) => _date.subtract(Duration(days: days)).toDate();
 
   /// Returns a new [Date] with given amount of days added to [this].
   /// [days] can be negative, in this case subtraction will happen.
@@ -76,10 +69,7 @@ class Date implements Comparable<Date> {
 
   @override
   bool operator ==(final dynamic other) =>
-      other is Date &&
-      other.day == _date.day &&
-      other.month == _date.month &&
-      other.year == _date.year;
+      other is Date && other.day == _date.day && other.month == _date.month && other.year == _date.year;
 
   /// Checks if [this] is after [other].
   bool operator >(final Date other) => _date.isAfter(other.toDateTime());
@@ -106,12 +96,10 @@ class Date implements Comparable<Date> {
   Date.today() : _date = _truncateTimeOfDay(DateTime.now());
 
   /// Returns tomorrow's date.
-  Date.tomorrow()
-      : _date = _truncateTimeOfDay(DateTime.now().add(Duration(days: 1)));
+  Date.tomorrow() : _date = _truncateTimeOfDay(DateTime.now().add(const Duration(days: 1)));
 
   /// Returns yesterday's date.
-  Date.yesterday()
-      : _date = _truncateTimeOfDay(DateTime.now().subtract(Duration(days: 1)));
+  Date.yesterday() : _date = _truncateTimeOfDay(DateTime.now().subtract(const Duration(days: 1)));
 
   /// Returns day of the date represented by this object. Always in range [1; 31].
   int get day => _date.day;

@@ -1,9 +1,9 @@
 .dart_tool/
 .packages
 pubspec.lock
-build/
 doc/api/
 .vscode/
+idea/
 test/.test_coverage.dart
 coverage_badge.svg
 coverage
