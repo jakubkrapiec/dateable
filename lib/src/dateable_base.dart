@@ -141,7 +141,7 @@ class Date implements Comparable<Date> {
     if (difference < 0) {
       return digits.substring(difference.abs());
     } else {
-      return ('0' * difference) + digits;
+      return digits.padLeft(difference, '0');
     }
   }
 

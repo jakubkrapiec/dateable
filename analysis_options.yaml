@@ -1,4 +1,4 @@
-include: package:pedantic/analysis_options.yaml
+include: package:lints/recommended.yaml
 
 analyzer:
   strong-mode:
@@ -8,4 +8,3 @@ analyzer:
 linter:
   rules:
     prefer_const_constructors: true
-    lines_longer_than_80_chars: false

@@ -1,3 +1,9 @@
+## 3.0.0+3
+
+- Improved internal formatting to score full set of pub points.
+- Improved internal code clarity.
+- Upgraded the internal linting system.
+
 ## 3.0.0+2
 
 - Improved performance.
