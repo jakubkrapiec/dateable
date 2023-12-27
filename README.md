@@ -39,13 +39,14 @@ All of the above result in the same `date` object!
 
 ### 📅 Getters
 
-There are three getters. Simple and easy.
+There are 4 getters. Simple and easy.
 
 ```dart
 final date = Date(11, 3, 2002);
 print(date.day); // Prints 11
 print(date.month); // Prints 3
 print(date.year); // Prints 2002
+print(date.weekday) // Prints 1, since it's a Monday
 ```
 
 ### ↔️ Conversion methods
@@ -56,7 +57,20 @@ print(date.year); // Prints 2002
 final date = Date(11, 3, 2002);
 final dateTime = date.toDateTime(); // Time of day is set to zeros
 print(date.toIso8601()); // Prints 2002-03-11T00:00:00.000
+print(date.toIso8601(includeTime: false)) // Prints 2002-03-11
 print(date.toString()); // Prints 11032002
+```
+
+### ✅ Validation
+
+You can validate your dates easily with the `isValid` static method.
+
+Since the default Date constructor doesn't throw on invalid input, and always tries to silently convert to a valid date instead (just like the `DateTime` constructor), you may want to perform the validation explicitly.
+
+```dart
+print(Date.isValid(day: 11, month: 3, year: 2002)); // Prints true
+print(Date.isValid(day: 29, month: 2, year: 2021)); // Prints false
+print(Date.isValid(day: 40, month: 50, year: -99999)); // Prints true
 ```
 
 ### 📊 Comparisions

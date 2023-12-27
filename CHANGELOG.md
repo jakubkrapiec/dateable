@@ -1,3 +1,10 @@
+## 3.1.0
+
+- Added `weekday` getter.
+- Added `includeTime` optional parameter to `toIso8601`.
+- Added `isValid` static method.
+- Updated dependencies.
+
 ## 3.0.0+3
 
 - Improved internal formatting to score full set of pub points.
