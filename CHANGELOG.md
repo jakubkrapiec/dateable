@@ -1,3 +1,7 @@
+## 4.0.0+1
+
+- Fix too tight dependency constraint.
+
 ## 4.0.0
 
 - **BREAKING:** Upgrade minimal Dart version to 2.17.
