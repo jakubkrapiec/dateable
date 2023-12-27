@@ -1,4 +1,4 @@
-## 4.0.0+1
+## 4.0.1
 
 - Fix too tight dependency constraint.
 
