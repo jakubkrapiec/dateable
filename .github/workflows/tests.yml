@@ -4,10 +4,10 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: google/dart:latest
     steps:
     - uses: actions/checkout@v2
+    - name: Setup Dart SDK
+      uses: dart-lang/setup-dart@v1
     - name: Install dependencies
       run: pub get
     - name: Run tests
