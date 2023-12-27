@@ -1,5 +1,6 @@
-## 3.1.0
+## 4.0.0
 
+- **BREAKING:** Upgrade minimal Dart version to 2.17.
 - Added `weekday` getter.
 - Added `includeTime` optional parameter to `toIso8601`.
 - Added `isValid` static method.
