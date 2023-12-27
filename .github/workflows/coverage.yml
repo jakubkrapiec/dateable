@@ -6,13 +6,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Setup Dart SDK
       uses: dart-lang/setup-dart@v1
     - name: Install dependencies
-      run: dart pub get
+      run: dart pub global activate coverage
     - name: Generate coverage report
-      run: dart pub run test_coverage
+      run: coverage:test_with_coverage
     - name: Submit to Coveralls
       uses: coverallsapp/github-action@master
       with:
